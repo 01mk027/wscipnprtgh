@@ -14,7 +14,7 @@ const wss = new WebSocketServer.Server({ server: server })
  
 // Creating connection using websocket
 wss.on("connection", (ws, req) => {
-    console.log("new client connected");
+    /*console.log("new client connected");
     console.log("== ws_socket.address() start ==");
     console.log(ws._socket.address());
     console.log("== ws_socket.address() stop  ==");
@@ -26,7 +26,11 @@ wss.on("connection", (ws, req) => {
     console.log("== ws._socket.remotePort start==");
     console.log(ws._socket.remotePort);
     console.log("== ws._socket.remotePort stop ==");
-
+*/
+    console.log("REMOTEADDRESS = |");
+    console.log(req.socket.remoteAddress);
+    console.log("REMOTEPORT = |");
+    console.log(req.socket.remotePort);
 
     // sending message
     ws.on("message", data => {
